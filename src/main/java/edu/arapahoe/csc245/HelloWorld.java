@@ -1,9 +1,3 @@
-/*
-
-    Added comment - added more
-
-*/
-
 package edu.arapahoe.csc245;
 
 import org.apache.logging.log4j.LogManager;
