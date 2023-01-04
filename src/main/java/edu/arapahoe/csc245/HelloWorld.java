@@ -1,3 +1,5 @@
+// This is a test
+
 package edu.arapahoe.csc245;
 
 import org.apache.logging.log4j.LogManager;
