@@ -15,21 +15,21 @@ on:
 jobs:
   build:
     name: Analyze project with Jtest
-    
+
     # Specifies the type of runner that the job will run on.
 #    runs-on: self-hosted
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-    
+
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout repository
       uses: actions/checkout@v2
-    
+
     # Generates the jtest.data.json input file.
     - name: Create input for Jtest
-      run: ./mvnw clean install jtest:jtest "-Djtest.skip=true" 
+      run: ./mvnw clean install jtest:jtest "-Djtest.skip=true"
 
     # Runs code analysis with Jtest
     - name: Run Jtest
