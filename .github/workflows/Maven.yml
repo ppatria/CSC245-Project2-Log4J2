@@ -25,45 +25,45 @@ jobs:
 
 
     - name: maven-settings-xml-action
-    uses: whelk-io/maven-settings-xml-action@v20
-    with:
-      repositories: >
-        [
-          {
-            "id": "central",
-            "url": "https://repo1.maven.org/maven2"
-          }
-        ]
-      plugin_repositories: >
-        [
-          {
-            "id": "jtest-local",
-            "url": "file:/${jtest.home}/integration/maven"
-          }
-        ]
-      mirrors: >
-        [
-          {
-            "id": "jtest-local-mirror",
-            "mirrorOf": "jtest-local",
-            "url": "file:/Users/douglundin/Downloads/jtest/integration/maven"
-          }
-        ]
-      profiles: >
-        [
-          {
-            "id": "jtest-settings-profile",
-            "activation": {
-              "activeByDefault": "true"
-            },
-            "properties": {
-              "jtest.home": "/Users/douglundin/Downloads/jtest"
+      uses: whelk-io/maven-settings-xml-action@v20
+      with:
+        repositories: >
+          [
+            {
+              "id": "central",
+              "url": "https://repo1.maven.org/maven2"
             }
-          }
-        ]
-      plugin_groups: >
-        [
-          "com.parasoft.jtest",
-          "com.parasoft.jtest.tia"
-        ]
-      output_file: .m2/settings.xml
+          ]
+        plugin_repositories: >
+          [
+            {
+              "id": "jtest-local",
+              "url": "file:/${jtest.home}/integration/maven"
+            }
+          ]
+        mirrors: >
+          [
+            {
+              "id": "jtest-local-mirror",
+              "mirrorOf": "jtest-local",
+              "url": "file:/Users/douglundin/Downloads/jtest/integration/maven"
+            }
+          ]
+        profiles: >
+          [
+            {
+              "id": "jtest-settings-profile",
+              "activation": {
+                "activeByDefault": "true"
+              },
+              "properties": {
+                "jtest.home": "/Users/douglundin/Downloads/jtest"
+              }
+            }
+          ]
+        plugin_groups: >
+          [
+            "com.parasoft.jtest",
+            "com.parasoft.jtest.tia"
+          ]
+        output_file: .m2/settings.xml
