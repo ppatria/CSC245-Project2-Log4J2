@@ -34,7 +34,7 @@ jobs:
     # Set environment variable so runner will find Jtest
     - name: Set path so runner can find Jtest
       id: setpath
-      run: echo "{$env:GITHUB_ENV}={/Users/douglundin/Downloads/jtest}" >> $GITHUB_ENV
+      run: echo "/Users/douglundin/Downloads/jtest" >> $GITHUB_PATH
 
     # Runs code analysis with Jtest
     - name: Run Jtest
