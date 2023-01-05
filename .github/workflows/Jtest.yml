@@ -31,6 +31,11 @@ jobs:
     - name: Create input for Jtest
       run: ./mvnw clean install jtest:jtest "-Djtest.skip=true"
 
+    # Set environment variable so runner will find Jtest
+    - name: Set path so runner can find Jtest
+      id: setpath
+      run: echo "{$env:GITHUB_ENV}={/Users/douglundin/Downloads/jtest}" >> $GITHUB_ENV
+
     # Runs code analysis with Jtest
     - name: Run Jtest
       id: jtest
