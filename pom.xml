@@ -15,6 +15,7 @@
         <log4j.version>2.11.2</log4j.version>
         <disruptor.version>3.4.2</disruptor.version>
         <jackson.version>2.9.8</jackson.version>
+        <report_dir>../jtest_reports</report_dir>
     </properties>
 
     <dependencies>
@@ -59,7 +60,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
+                <version>3.6.2</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -87,6 +88,23 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.parasoft.jtest</groupId>
+                <artifactId>jtest-maven-plugin</artifactId>
+                <version>2022.2.1</version>
+                <configuration>
+                    <settings>settings.properties</settings>
+                    <config>builtin://Recommended Rules</config>
+                    <resources>
+                        <resource>**/src/main/java/edu.arapahoe.csc245/**/*.java</resource>
+                        <resource>**/*.xml</resource>
+                    </resources>
+                    <exclude>**/test/**</exclude>
+                    <report>${report_dir}</report>
+                    <publish>true</publish>
+                </configuration>
             </plugin>
 
         </plugins>
