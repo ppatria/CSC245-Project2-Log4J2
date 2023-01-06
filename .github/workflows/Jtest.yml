@@ -42,7 +42,8 @@ jobs:
       uses: parasoft/run-jtest-action@1.0.0
       with:
         #Uses the jtest.data.json generated with the Maven command in the previous step
-        input: build/jtest/jtest.data.json
+#        input: build/jtest/jtest.data.json       From https://github.com/marketplace/actions/run-parasoft-jtest but file is in target
+        input: target/jtest/jtest.data.json
 
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
